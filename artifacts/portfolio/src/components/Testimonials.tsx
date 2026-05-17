@@ -20,7 +20,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonios" className="py-32 px-6 bg-primary text-primary-foreground">
+    <section id="testimonios" className="py-32 px-6 bg-[hsl(215_20%_25%)] text-foreground">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold mb-16 tracking-tight text-center">Lo que dicen los clientes</h2>
 
@@ -32,7 +32,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white/10 p-8 rounded-3xl backdrop-blur-sm border border-white/20 flex flex-col justify-between"
+              className="bg-white/5 p-8 rounded-3xl border border-white/10 flex flex-col justify-between"
             >
               <div className="mb-8">
                 <svg className="w-8 h-8 text-white/40 mb-4" fill="currentColor" viewBox="0 0 24 24">
