@@ -32,7 +32,7 @@ export default function Contact() {
   });
 
   const onCopyEmail = () => {
-    navigator.clipboard.writeText("yordismestra123@gmail.com");
+    navigator.clipboard.writeText("yordisandresmestrasmendez@gmail.com");
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -94,12 +94,12 @@ export default function Contact() {
                 <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">Email</p>
                 <div className="flex items-center gap-3">
                   <a
-                    href="mailto:yordismestra123@gmail.com"
+                    href="mailto:yordisandresmestrasmendez@gmail.com"
                     className="flex items-center gap-2 text-lg font-medium hover:text-primary transition-colors"
                     data-testid="link-email"
                   >
                     <Mail className="w-5 h-5" />
-                    yordismestra123@gmail.com
+                    yordisandresmestrasmendez@gmail.com
                   </a>
                   <button
                     onClick={onCopyEmail}
