@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { GraduationCap, MapPin } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 
 function Counter({ end, duration = 2 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -79,21 +79,6 @@ export default function About() {
                 </div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex gap-4 p-5 bg-card border border-border rounded-2xl"
-              >
-                <div className="mt-1 text-primary shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold">Medellín, Antioquia</p>
-                  <p className="text-sm text-muted-foreground">Disponible para trabajo remoto</p>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
 
