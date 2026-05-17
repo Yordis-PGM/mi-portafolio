@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Copy, CheckCircle2, Phone, MapPin, Globe, Linkedin, Instagram } from "lucide-react";
+import { Mail, Copy, CheckCircle2, Phone, MapPin } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -126,20 +126,6 @@ export default function Contact() {
               </div>
             </div>
 
-            <div>
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Redes</p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-3 bg-secondary rounded-full" data-testid="link-behance">
-                  <Globe className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-3 bg-secondary rounded-full" data-testid="link-linkedin">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-3 bg-secondary rounded-full" data-testid="link-instagram">
-                  <Instagram className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
           </div>
 
           <motion.div
