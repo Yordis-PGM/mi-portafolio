@@ -24,8 +24,12 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
+  req.log.info({ userLen: gmailUser.length, passLen: gmailPass.length }, "Attempting to send email");
+
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: gmailUser,
       pass: gmailPass,
@@ -33,6 +37,9 @@ router.post("/contact", async (req, res) => {
   });
 
   try {
+    await transporter.verify();
+    req.log.info("SMTP connection verified successfully");
+
     await transporter.sendMail({
       from: `"Portfolio Contact" <${gmailUser}>`,
       to: gmailUser,
@@ -47,10 +54,11 @@ router.post("/contact", async (req, res) => {
       `,
     });
 
-    req.log.info({ from: email }, "Contact email sent");
+    req.log.info({ from: email }, "Contact email sent successfully");
     res.json({ success: true });
   } catch (err) {
-    req.log.error({ err }, "Failed to send contact email");
+    const error = err as NodeJS.ErrnoException & { code?: string; responseCode?: number; response?: string };
+    req.log.error({ code: error.code, responseCode: error.responseCode, response: error.response, message: error.message }, "Failed to send contact email");
     res.status(500).json({ error: "No se pudo enviar el mensaje. Intenta de nuevo." });
   }
 });
