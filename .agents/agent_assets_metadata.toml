@@ -1,0 +1,44 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "DnJBY7oTrRs7v0_viqOE7"
+uri = "file://artifacts/portfolio/src/assets/avatar.png"
+type = "image"
+title = "Professional avatar illustration"
+
+[[generated]]
+id = "9dNdFQfYw_-QPY5s7f8Pr"
+uri = "file://artifacts/portfolio/src/assets/project-1.png"
+type = "image"
+title = "Mobile app UI mockup"
+
+[[generated]]
+id = "ttnWqamzFjASlWD1Xd7C3"
+uri = "file://artifacts/portfolio/src/assets/project-2.png"
+type = "image"
+title = "Motion graphics title sequence"
+
+[[generated]]
+id = "Zql3O4JZU7DmGPf4Kar49"
+uri = "file://artifacts/portfolio/src/assets/project-3.png"
+type = "image"
+title = "Brand identity design system"
+
+[[generated]]
+id = "X216C0i3UUN8zcaaRoOvN"
+uri = "file://artifacts/portfolio/src/assets/project-4.png"
+type = "image"
+title = "E-commerce web app UI"
+
+[[generated]]
+id = "ElYdAeuOKah4mYod-oxPJ"
+uri = "file://artifacts/portfolio/src/assets/project-5.png"
+type = "image"
+title = "3D abstract product vis"
+
+[[generated]]
+id = "FQO-KvSVwZ7N3d5fG62Vb"
+uri = "file://artifacts/portfolio/src/assets/project-6.png"
+type = "image"
+title = "UX research process"
