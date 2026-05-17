@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import avatarImg from "../assets/avatar.png";
 
 export default function Hero() {
-  const roles = ["UI/UX Designer", "Motion Graphics Artist", "Brand Experience Creator"];
+  const roles = ["Asistente Virtual", "Soporte Administrativo Remoto", "Gestión de CRM & Datos", "Atención al Cliente"];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function Hero() {
           <img src={avatarImg} alt="Yordis Mestra" className="w-full h-full object-cover" />
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -35,7 +36,7 @@ export default function Hero() {
           YORDIS MESTRA
         </motion.h1>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -55,23 +56,23 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-12"
         >
-          Diseñando experiencias digitales que impactan.
+          Organización, precisión y comunicación al servicio de tu negocio.
         </motion.p>
 
-        <motion.a 
+        <motion.a
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          href="#proyectos"
+          href="#servicios"
           className="group flex flex-col items-center text-foreground font-semibold hover:text-primary transition-colors"
         >
-          <span>Ver mi trabajo</span>
+          <span>Ver mis servicios</span>
           <span className="block w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300 mt-1 mb-4"></span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
@@ -84,6 +85,3 @@ export default function Hero() {
     </section>
   );
 }
-
-// Inline AnimatePresence since we need it here
-import { AnimatePresence } from "framer-motion";

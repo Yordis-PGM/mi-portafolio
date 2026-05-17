@@ -15,9 +15,9 @@ export default function Navbar() {
   const navLinks = [
     { name: "Inicio", href: "#inicio" },
     { name: "Sobre mí", href: "#sobre-mi" },
-    { name: "Proyectos", href: "#proyectos" },
+    { name: "Servicios", href: "#servicios" },
     { name: "Habilidades", href: "#habilidades" },
-    { name: "Proceso", href: "#proceso" },
+    { name: "Experiencia", href: "#experiencia" },
     { name: "Testimonios", href: "#testimonios" },
     { name: "Contacto", href: "#contacto" },
   ];
@@ -35,7 +35,7 @@ export default function Navbar() {
           <a href="#inicio" className="text-xl font-bold tracking-tighter text-foreground">
             YM<span className="text-primary">.</span>
           </a>
-          
+
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <a

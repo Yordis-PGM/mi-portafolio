@@ -1,62 +1,107 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import img1 from "../assets/project-1.png";
-import img2 from "../assets/project-2.png";
-import img3 from "../assets/project-3.png";
-import img4 from "../assets/project-4.png";
-import img5 from "../assets/project-5.png";
-import img6 from "../assets/project-6.png";
+import { Mail, Database, MessageCircle, BarChart2, CalendarDays, Search } from "lucide-react";
 
-const projects = [
-  { id: 1, title: "FinDash App", category: "UI/UX", desc: "Dashboard financiero intuitivo", img: img1, className: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto" },
-  { id: 2, title: "Nexus Title Sequence", category: "Motion", desc: "Secuencia de títulos cinemática", img: img2, className: "aspect-square" },
-  { id: 3, title: "Aura Branding", category: "Branding", desc: "Sistema de identidad visual", img: img3, className: "aspect-square" },
-  { id: 4, title: "Lumina Shop", category: "E-Commerce", desc: "Experiencia de compra minimalista", img: img4, className: "aspect-square" },
-  { id: 5, title: "Abstract Visions", category: "3D/VFX", desc: "Visualización de producto en 3D", img: img5, className: "md:col-span-2 aspect-[2/1] md:aspect-auto" },
-  { id: 6, title: "HealthSync UX", category: "Research", desc: "Investigación y mapeo de usuario", img: img6, className: "aspect-square" },
+const services = [
+  {
+    id: 1,
+    icon: Mail,
+    title: "Gestión de Email",
+    category: "Administración",
+    desc: "Organización y gestión de bandejas de entrada para múltiples clientes, filtrado de mensajes y seguimiento de prioridades.",
+    className: "md:col-span-2 md:row-span-1",
+    accent: "bg-indigo-50",
+  },
+  {
+    id: 2,
+    icon: Database,
+    title: "CRM & Datos",
+    category: "Sistemas",
+    desc: "Entrada, actualización y mantenimiento de información en hojas de cálculo y sistemas CRM.",
+    className: "",
+    accent: "bg-violet-50",
+  },
+  {
+    id: 3,
+    icon: MessageCircle,
+    title: "Atención al Cliente",
+    category: "Soporte",
+    desc: "Soporte mediante chat, correo electrónico y atención telefónica. Resolución de inquietudes y escalamiento de casos.",
+    className: "",
+    accent: "bg-sky-50",
+  },
+  {
+    id: 4,
+    icon: BarChart2,
+    title: "Reportes & Documentos",
+    category: "Administración",
+    desc: "Elaboración de reportes, archivo de documentos y compilación de informes según las necesidades del equipo.",
+    className: "",
+    accent: "bg-emerald-50",
+  },
+  {
+    id: 5,
+    icon: CalendarDays,
+    title: "Coordinación de Agenda",
+    category: "Gestión",
+    desc: "Organización y coordinación del calendario y agenda del supervisor o cliente, programación de reuniones.",
+    className: "md:col-span-2 md:row-span-1",
+    accent: "bg-amber-50",
+  },
+  {
+    id: 6,
+    icon: Search,
+    title: "Investigación de Mercado",
+    category: "Análisis",
+    desc: "Investigación básica de mercado y compilación de informes con información relevante para la toma de decisiones.",
+    className: "",
+    accent: "bg-rose-50",
+  },
 ];
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-32 px-6">
+    <section id="servicios" className="py-32 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-16 md:flex justify-between items-end">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Trabajo Seleccionado</h2>
-            <p className="text-muted-foreground text-lg max-w-xl">Una muestra de proyectos donde la forma y la función se encuentran.</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Servicios</h2>
+            <p className="text-muted-foreground text-lg max-w-xl">
+              Apoyo administrativo remoto con precisión y atención al detalle para que tu negocio funcione sin fricciones.
+            </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`group relative overflow-hidden rounded-3xl bg-muted cursor-pointer ${project.className}`}
-            >
-              <img 
-                src={project.img} 
-                alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-primary text-white rounded-full">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                  <p className="text-white/80 mb-6">{project.desc}</p>
-                  <div className="flex items-center text-white font-medium hover:text-primary transition-colors">
-                    Ver proyecto <ArrowRight className="ml-2 w-4 h-4" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[220px]">
+          {services.map((service, i) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.id}
+                data-testid={`card-service-${service.id}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`group relative overflow-hidden rounded-3xl border border-border bg-card p-8 flex flex-col justify-between hover:border-primary/40 hover:shadow-lg transition-all duration-300 cursor-default ${service.className}`}
+              >
+                <div className={`absolute inset-0 ${service.accent} opacity-0 group-hover:opacity-60 transition-opacity duration-500`} />
+
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
+                  <span className="inline-block px-3 py-1 mb-3 text-xs font-semibold bg-secondary text-muted-foreground rounded-full">
+                    {service.category}
+                  </span>
+                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                <p className="relative z-10 text-sm text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                  {service.desc}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

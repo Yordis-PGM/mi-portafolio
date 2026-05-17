@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 export default function Testimonials() {
   const testimonials = [
     {
-      quote: "Yordis no solo diseñó nuestra app, la elevó a un nivel que no sabíamos que era posible. Su atención al detalle y el uso del motion design hicieron que nuestro producto destaque en un mercado saturado.",
-      name: "Elena Rostova",
-      company: "CEO, Finova Tech"
+      quote: "Yordis transformó completamente la organización de nuestra bandeja de entrada y el seguimiento de clientes en el CRM. Desde que trabaja con nosotros, no hemos perdido ni un solo seguimiento importante.",
+      name: "Carlos Mendoza",
+      company: "Director, Agencia Digital Impulso"
     },
     {
-      quote: "Trabajar con Yordis es sinónimo de tranquilidad. Entiende el problema desde la raíz y propone soluciones visuales que comunican exactamente lo que la marca necesita. Un profesional absoluto.",
-      name: "Marc Valier",
-      company: "Director Creativo, Studio V"
+      quote: "Profesional, puntual y con una atención al detalle impresionante. Yordis maneja nuestros reportes semanales y la coordinación de agenda con una eficiencia que ningún otro asistente había logrado.",
+      name: "Valentina Ríos",
+      company: "CEO, Studio Creativo VR"
     },
     {
-      quote: "La identidad y web que creó para nosotros nos ayudó a duplicar nuestra tasa de conversión. Su diseño es limpio, con propósito y maravillosamente ejecutado.",
-      name: "Sofia Lin",
-      company: "Founder, Lumina"
+      quote: "Lo que más valoro de Yordis es su proactividad. No solo completa las tareas asignadas, sino que propone mejoras en los procesos. Nuestro equipo remoto funciona mucho mejor gracias a su apoyo.",
+      name: "Andrés Castillo",
+      company: "Fundador, Consultora Nómada"
     }
   ];
 
@@ -23,7 +23,7 @@ export default function Testimonials() {
     <section id="testimonios" className="py-32 px-6 bg-primary text-primary-foreground">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold mb-16 tracking-tight text-center">Lo que dicen los clientes</h2>
-        
+
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t, i) => (
             <motion.div
