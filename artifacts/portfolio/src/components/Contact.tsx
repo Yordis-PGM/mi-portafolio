@@ -45,13 +45,30 @@ export default function Contact() {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarme. Te responderé pronto.",
-    });
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error || "Error al enviar");
+      }
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarme. Te responderé pronto.",
+      });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Error al enviar",
+        description: err instanceof Error ? err.message : "Intenta de nuevo más tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
