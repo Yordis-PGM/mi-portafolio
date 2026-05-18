@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import avatarImg from "@assets/WhatsApp_Image_2026-05-16_at_3.43.14_PM_1779055293010.jpeg";
 
 export default function Hero() {
@@ -64,6 +64,18 @@ export default function Hero() {
         >
           Organización, precisión y comunicación al servicio de tu negocio.
         </motion.p>
+
+        <motion.a
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          href="/cv-yordis-mestra.pdf"
+          download="CV-Yordis-Mestra.pdf"
+          className="inline-flex items-center gap-2 px-6 py-3 mb-10 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
+        >
+          <Download className="w-4 h-4" />
+          Descargar CV
+        </motion.a>
 
         <motion.a
           initial={{ opacity: 0 }}
