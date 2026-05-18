@@ -15,16 +15,16 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const gmailUser = process.env.GMAIL_USER;
+  const gmailUser = "yordisandresmestrasmendez@gmail.com";
   const gmailPass = process.env.GMAIL_APP_PASSWORD;
 
-  if (!gmailUser || !gmailPass) {
-    req.log.error("GMAIL_USER or GMAIL_APP_PASSWORD not configured");
+  if (!gmailPass) {
+    req.log.error("GMAIL_APP_PASSWORD not configured");
     res.status(500).json({ error: "El servidor de correo no está configurado." });
     return;
   }
 
-  req.log.info({ userLen: gmailUser.length, passLen: gmailPass.length }, "Attempting to send email");
+  req.log.info({ passLen: gmailPass.length }, "Attempting to send email");
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
