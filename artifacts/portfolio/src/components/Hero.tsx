@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
-import avatarImg from "@assets/WhatsApp_Image_2026-05-16_at_3.43.14_PM_1779055293010.jpeg";
+import avatarImg from "@assets/avatar.jpeg";
 
 export default function Hero() {
   const roles = ["Asistente Virtual", "Soporte Administrativo Remoto", "Gestión de CRM & Datos", "Atención al Cliente"];
